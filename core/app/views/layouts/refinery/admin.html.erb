@@ -5,12 +5,12 @@
   <body class="<%= action_name %> <%= I18n.locale %>">
     <%= render '/refinery/site_bar' %>
     <div id='tooltip_container'></div>
-    <header id="header">
-      <%= render 'refinery/admin/menu' %>
-    </header>
-    <div id="page_container">
+    <div id="page_container" class="pure-g">
       <div id="page">
-        <div id="content" class="clearfix">
+        <header id="header" class="pure-u-1-5">
+          <%= render 'refinery/admin/menu' %>
+        </header>
+        <div id="content" class="pure-u-4-5">
           <div id="flash_container">
             <%= render '/refinery/no_script' %>
             <%= render '/refinery/message' %>

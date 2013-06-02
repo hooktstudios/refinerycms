@@ -1,0 +1,260 @@
+@import '../pure-min';
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+//Base
+
+html {
+  font-size: 14px;
+}
+
+body {
+  padding-bottom: 60px;
+}
+
+a {
+  color: #3b8bba;
+  text-decoration: none;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+input {
+  max-width: 100%;
+}
+
+h1:first-child {
+  margin-top: 0;
+}
+
+//Layout
+
+.inner {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+#page_container,
+#site_bar_content {
+  @extend .inner;
+}
+
+#header {
+  padding: 0 30px 0 0;
+}
+
+#records {
+  float: left;
+  padding-right: 30px;
+  width: 72%;
+}
+
+#actions {
+  float: right;
+  width: 28%;
+
+  > ul {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+      margin-bottom: 1em;
+    }
+  }
+
+  .pure-button {
+    width: 100%;
+  }
+}
+
+//Pure extensions
+
+.pure-button {
+  font-size: 13px;
+  position: relative;
+  white-space: normal;
+}
+
+.pure-menu .active {
+  background: #eee;
+  color: #000;
+}
+
+.pure-button-compact {
+  font-size: 90%;
+  padding: 0.45em 0.75em;
+}
+
+.pure-button-icon {
+  padding: 0.75em 1em 0.75em 2.75em;
+}
+
+//Modules
+
+.add_icon {
+  @extend .pure-button;
+  @extend .pure-button-primary;
+  @extend .pure-button-icon;
+  max-width: 100%;
+  text-align: left;
+
+  &:before {
+    background: lighten(#0078e7, 20);
+    background: rgba(#fff, 0.35);
+    border-radius: 50%;
+    content: "+";
+    display: block;
+    font-weight: bold;
+    height: 1em;
+    line-height: 0.9em;
+    margin-top: -0.5em;
+    position: absolute;
+    left: 1em;
+    top: 50%;
+    text-align: center;
+    width: 1em;
+    vertical-align: middle;
+  }
+}
+
+//Refinery specific shiznit
+
+#site_bar {
+  background: #222;
+  color: #eee;
+  margin-bottom: 40px;
+  padding: 12px 0;
+}
+
+#editor_switch {
+  float: left;
+  a {
+    @extend .pure-button;
+    @extend .pure-button-compact;
+  }
+}
+
+#site_bar_branding {
+  float: right;
+  padding-top: 4px;
+  text-align: right;
+}
+
+#site_bar_company_name select {
+  margin-left: 12px;
+}
+
+#logout {
+  margin-left: 12px;
+}
+
+.record {
+  background: #fafafa;
+  display: block;
+  max-width: 570px;
+  padding: 0.5em 0.75em;
+
+  &:nth-of-type(odd) {
+    background: #efefef;
+  }
+
+  .title {
+    display: inline-block;
+    max-width: 92%;
+    vertical-align: middle;
+  }
+
+  .actions {
+    float: right;
+  }
+
+  .tree & { background: none; }
+}
+
+.pagination {
+  font-size: 0;
+  text-align: center;
+
+  a, span, em {
+    display: inline-block;
+    font-size: 13px;
+    padding: 0.4em 0.6em;
+  }
+
+  a:hover {
+    background: #eee;
+  }
+}
+
+//Forms
+
+// hide search form for now. Might be a good idea to style and display it
+// later on. I'll leave this @todo here for good measure.
+
+.search_form { display: none; }
+
+#page_parts {
+  @extend .pure-menu;
+  @extend .pure-menu-open;
+  @extend .pure-menu-horizontal;
+
+  margin-bottom: 0;
+  padding-left: 0;
+
+  li a {
+    background: #eee;
+
+    &:hover { background: #ddd; }
+  }
+}
+
+#switch_locale_picker {
+  overflow: hidden;
+  padding: 0 15px 0 0;
+  text-align: right;
+
+  li {
+    display: inline-block;
+  }
+}
+
+.wymeditor {
+  width: 815px;
+}
+
+input[type="submit"] {
+  @extend .pure-button;
+}
+
+#submit_button {
+  @extend .pure-button-primary;
+}
+
+#more_options_field {
+  @extend .clearfix;
+  margin-bottom: 20px;
+}
+
+#toggle_advanced_options { float: left; }
+#draft_field { float: right; }
+
+
+//Utilities
+
+.clearfix:after {
+  content:".";
+  display:block;
+  height:0;
+  clear:both;
+  visibility:hidden;
+}
+.clearfix {display:inline-block;}
+/* Hide from IE Mac \*/
+.clearfix {display:block;}
+/* End hide from IE Mac */
