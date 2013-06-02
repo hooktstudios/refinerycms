@@ -230,7 +230,16 @@ h1:first-child {
     float: right;
   }
 
+  .nested {
+    margin-top: 0.5em;
+  }
+
   .tree & { background: none; }
+  .nested & { padding: 0.5em 0; }
+}
+
+.nested:empty {
+  display: none;
 }
 
 .pagination {
