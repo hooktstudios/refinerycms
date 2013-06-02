@@ -120,6 +120,39 @@ h1:first-child {
 
 //Modules
 
+.tabs {
+  @extend .pure-menu;
+  @extend .pure-menu-open;
+  @extend .pure-menu-horizontal;
+
+  margin-bottom: -1px;
+  padding-left: 0;
+
+  li a {
+    background: #fafafa;
+    border: 1px solid #ddd;
+
+    &.active,
+    &:hover {
+      background: #f2f2f2;
+      border-bottom-color: #f2f2f2;
+    }
+  }
+}
+
+.tab-content-wrap {
+  background: #f2f2f2;
+  border: 1px solid #ddd;
+  margin-bottom: 1em;
+  padding: 0.5em 1.5em;
+}
+
+.tab-content {
+  display: none;
+
+  &.active { display: block; }
+}
+
 .add_icon {
   @extend .pure-button;
   @extend .pure-button-primary;
@@ -189,7 +222,7 @@ h1:first-child {
 
   .title {
     display: inline-block;
-    max-width: 92%;
+    max-width: 88%;
     vertical-align: middle;
   }
 
@@ -222,19 +255,62 @@ h1:first-child {
 
 .search_form { display: none; }
 
-#page_parts {
-  @extend .pure-menu;
-  @extend .pure-menu-open;
-  @extend .pure-menu-horizontal;
+form {
+  @extend .pure-form;
+  @extend .pure-form-stacked;
 
-  margin-bottom: 0;
-  padding-left: 0;
-
-  li a {
-    background: #eee;
-
-    &:hover { background: #ddd; }
+  input, select, textarea {
+    font-size: 0.9em;
   }
+
+  .datetime {
+    select {
+      display: inline-block;
+    }
+  }
+}
+
+.input {
+  margin-bottom: 0.5em;
+}
+
+textarea {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px #ddd;
+  padding: 0.5em;
+
+  &:focus {
+    outline: 0;
+    border-color: #129fea;
+  }
+}
+
+.field.boolean label {
+  @extend .pure-checkbox;
+  cursor: pointer;
+
+  input {
+    font-size: 1em;
+    margin-right: 4px;
+  }
+}
+
+.form-actions {
+  a {
+    font-size: 0.9em;
+    margin: 0 0.5em;
+  }
+}
+
+.form-actions-left,
+.form-actions-right {
+  display: inline-block;
+}
+
+#page_parts {
+  @extend .tabs;
+  margin-bottom: 0;
 }
 
 #switch_locale_picker {
