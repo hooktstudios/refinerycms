@@ -153,7 +153,7 @@ h1:first-child {
   &.active { display: block; }
 }
 
-.add_icon {
+%icn-btn {
   @extend .pure-button;
   @extend .pure-button-primary;
   @extend .pure-button-icon;
@@ -161,22 +161,32 @@ h1:first-child {
   text-align: left;
 
   &:before {
-    background: lighten(#0078e7, 20);
-    background: rgba(#fff, 0.35);
-    border-radius: 50%;
-    content: "+";
+    color: #fff;
+    content: "";
     display: block;
+    font-size: 17px;
     font-weight: bold;
     height: 1em;
     line-height: 1em;
     margin-top: -0.5em;
+    opacity: 0.8;
     position: absolute;
-    left: 1em;
+    left: 0.75em;
     top: 50%;
     text-align: center;
     width: 1em;
     vertical-align: middle;
   }
+}
+
+.add_icon {
+  @extend %icn-btn;
+  &:before { content: "+"; }
+}
+
+.edit_icon {
+  @extend %icn-btn;
+  &:before { content: "✎"; }
 }
 
 //Refinery specific shiznit
