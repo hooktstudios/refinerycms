@@ -127,6 +127,14 @@ h1:first-child {
   }
 }
 
+%inline {
+  list-style-type: none;
+
+  li {
+    display: inline-block;
+  }
+}
+
 //Pure extensions
 
 .pure-button {
@@ -157,6 +165,7 @@ h1:first-child {
   @extend .pure-menu-horizontal;
 
   margin-bottom: -1px;
+  overflow: hidden;
   padding-left: 0;
 
   li a {
@@ -298,6 +307,21 @@ h1:first-child {
   }
 }
 
+#image_grid {
+  list-style-type: none;
+
+  li {
+    display: inline-block;
+    margin-bottom: 5%;
+    width: 30%;
+
+    .actions {
+      display: block;
+      text-align: center;
+    }
+  }
+}
+
 //Forms
 
 // hide search form for now. Might be a good idea to style and display it
@@ -336,6 +360,12 @@ textarea {
   }
 }
 
+.radio {
+  @extend .pure-radio;
+
+  input { margin-right: 0.5em; }
+}
+
 .field.boolean label {
   @extend .pure-checkbox;
   cursor: pointer;
@@ -347,6 +377,8 @@ textarea {
 }
 
 .form-actions {
+  padding: 1em 0;
+
   a, .button {
     font-size: 0.9em;
     margin: 0 0.5em;
@@ -393,6 +425,24 @@ input[type="submit"] {
 #toggle_advanced_options { float: left; }
 #draft_field { float: right; }
 
+#existing_image_area_content {
+  @extend %inline;
+  .selected img {
+    box-shadow: 0 0 5px 2px #0078e7;
+  }
+}
+
+.hint {
+  color: #777;
+  display: inline-block;
+  font-size: 85%;
+  font-style: italic;
+  padding: 0.5em 0;
+}
+
+// No need for a resizing image tool for now. Again, I'll leave this @todo here
+// for good measure, this is a temporary hack.
+#existing_image_size_area { display: none; }
 
 //Utilities
 
