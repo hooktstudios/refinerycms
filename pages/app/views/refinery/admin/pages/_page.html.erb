@@ -46,7 +46,9 @@
                   :method => :delete if page.deletable? %>
     </span>
   </div>
-  <ul class='nested' data-ajax-content="<%= refinery.admin_children_pages_path(page.nested_url) %>">
-    <%= render(:partial => 'page', :collection => page.children) if Refinery::Pages.auto_expand_admin_tree %>
-  </ul>
+  <% if Refinery::Pages.auto_expand_admin_tree && page.children.any? %>
+    <ul class='nested' data-ajax-content="<%= refinery.admin_children_pages_path(page.nested_url) %>">
+      <%= render(:partial => 'page', :collection => page.children) %>
+    </ul>
+  <% end %>
 </li>
