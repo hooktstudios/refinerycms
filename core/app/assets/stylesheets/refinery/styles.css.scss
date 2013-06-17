@@ -96,6 +96,37 @@ h1:first-child {
   }
 }
 
+//Modules
+
+.flash {
+  border: 1px solid #fbeed5;
+  border-radius: 2px;
+  color: #c09853;
+  margin-bottom: 20px;
+  padding: 8px 35px 8px 14px;
+  position: relative;
+  text-shadow: 0 1px 0 rgba(#fff, 0.5);
+}
+
+.flash_notice {
+  color: #3a87ad;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+#flash_close {
+  float: right;
+  font-size: 0;
+  position: relative;
+  right: -21px;
+
+  &:after {
+    content: "×";
+    display: inline-block;
+    font-size: 16px;
+  }
+}
+
 //Pure extensions
 
 .pure-button {
