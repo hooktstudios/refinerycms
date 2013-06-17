@@ -9,7 +9,7 @@
  *= require refinery/styles
  // require refinery/layout
  // require refinery/site_bar
- // require refinery/ui
+ *= require refinery/ui
  // require refinery/submenu
  // require refinery/tooltips
  *= require wymeditor/skins/refinery/skin
