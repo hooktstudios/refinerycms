@@ -376,6 +376,10 @@ textarea {
   }
 }
 
+input[type="checkbox"] + label {
+  display: inline-block;
+}
+
 .form-actions {
   padding: 1em 0;
 
