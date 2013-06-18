@@ -342,10 +342,16 @@ form {
       display: inline-block;
     }
   }
+
+  label {
+    color: #777;
+  }
 }
 
 .input {
   margin-bottom: 0.5em;
+
+  &.x-small input { width: 12.5%; }
 }
 
 textarea {
@@ -415,10 +421,8 @@ input[type="checkbox"] + label {
 
 input[type="submit"] {
   @extend .pure-button;
-}
-
-#submit_button {
   @extend .pure-button-primary;
+  box-shadow: none;
 }
 
 #more_options_field {
@@ -441,7 +445,12 @@ input[type="submit"] {
   display: inline-block;
   font-size: 85%;
   font-style: italic;
-  padding: 0.5em 0;
+  padding: 0.5em;
+}
+
+form .field_with_hint {
+  label { display: block; }
+  input { display: inline-block; }
 }
 
 // No need for a resizing image tool for now. Again, I'll leave this @todo here
