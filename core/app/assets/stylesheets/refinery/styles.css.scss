@@ -229,6 +229,14 @@ h1:first-child {
   &:before { content: "✎"; }
 }
 
+.label {
+  background-color: #dfdfdf;
+  border-radius: 8px;
+  font-size: 10px;
+  margin: 0 4px;
+  padding: 1px 6px;
+}
+
 //Refinery specific shiznit
 
 #site_bar {
