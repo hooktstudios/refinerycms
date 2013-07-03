@@ -411,6 +411,8 @@ input[type="checkbox"] + label {
     font-size: 0.9em;
     margin: 0 0.5em;
   }
+
+  .loading & { background: image-url('refinery/ajax-loader.gif') right center no-repeat; }
 }
 
 .form-actions-left,
