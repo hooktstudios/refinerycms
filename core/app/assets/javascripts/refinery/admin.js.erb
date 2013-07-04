@@ -213,9 +213,6 @@ init_tooltips = function(args){
           $('.tooltip').remove();
           tooltip = $("<div class='tooltip'><div><span></span></div></div>").appendTo('#tooltip_container');
           tooltip.find("span").html($(this).attr('tooltip'));
-          if(!$.browser.msie) {
-            tooltip.corner('6px').find('span').corner('6px');
-          }
 
           tooltip_nib_extension = $.browser.msie ? '.gif' : '.png';
           nib = $("<img src='<%= asset_path 'refinery/tooltip-nib' %>" + tooltip_nib_extension + "' class='tooltip-nib'/>").appendTo('#tooltip_container');
@@ -534,7 +531,6 @@ var page_options = {
       // set the page tabs up, but ensure that all tabs are shown so that when wymeditor loads it has a proper height.
       page_options.tabs = $('#page-tabs');
       page_options.tabs.tabs({tabTemplate: '<li><a href="#{href}">#{label}</a></li>'});
-      page_options.tabs.find(' > ul li a').corner('top 5px');
 
       part_shown = $('#page-tabs .page_part.field').not('.ui-tabs-hide');
       $('#page-tabs .page_part.field').removeClass('ui-tabs-hide');
@@ -547,7 +543,6 @@ var page_options = {
       $(document).ready($.proxy(function(){
         // hide the tabs that are supposed to be hidden.
         $('#page-tabs .page_part.field').not(this).addClass('ui-tabs-hide');
-        $('#page-tabs > ul li a').corner('top 5px');
       }, part_shown));
 
       if(this.enable_parts){
