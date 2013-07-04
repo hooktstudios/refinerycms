@@ -168,15 +168,22 @@ h1:first-child {
   overflow: hidden;
   padding-left: 0;
 
-  li a {
-    background: #fafafa;
-    border: 1px solid #ddd;
+  li {
+    a {
+      background: #fafafa;
+      border: 1px solid #ddd;
 
-    &.active,
-    &:hover {
-      background: #f2f2f2;
-      border-bottom-color: #f2f2f2;
+      &.active,
+      &:hover {
+        background: #f2f2f2;
+        border-bottom-color: #f2f2f2;
+      }
     }
+  }
+
+  .ui-state-active a {
+    background: #f2f2f2;
+    border-bottom-color: #f2f2f2;
   }
 }
 
