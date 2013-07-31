@@ -96,6 +96,16 @@ h1:first-child {
   }
 }
 
+#menu-wrap {
+  @extend .pure-menu, .pure-menu-open;
+
+  li a {
+    line-height: 1.25;
+    padding: 5px 15px;
+    white-space: normal;
+  }
+}
+
 //Modules
 
 .flash {
