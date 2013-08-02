@@ -364,6 +364,13 @@ form {
 
   input, select, textarea {
     font-size: 0.9em;
+
+    &[readonly] {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      color: #777;
+      cursor: auto;
+    }
   }
 
   .datetime {
