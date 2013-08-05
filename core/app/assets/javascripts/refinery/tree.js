@@ -7,17 +7,16 @@ $(function() {
 
     if ($icon.hasClass('expanded')) {
       $icon.removeClass('expanded');
-      $nested.slideUp(); 
+      $nested.slideUp();
     }
     else {
       var contentUrl = $nested.data('ajax-content');
       $li.addClass('loading');
-      
+
       $nested.load(contentUrl, function() {
         $nested.find('li:last').addClass('branch_end');
         $icon.addClass('expanded');
-        init_tooltips();
-        $nested.slideDown(); 
+        $nested.slideDown();
         $li.removeClass('loading');
       });
     }
