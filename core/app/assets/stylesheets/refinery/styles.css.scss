@@ -406,6 +406,10 @@ textarea {
   }
 }
 
+.error {
+  color: #E60000;
+}
+
 .radio {
   @extend .pure-radio;
 
