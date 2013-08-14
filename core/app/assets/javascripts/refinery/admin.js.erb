@@ -453,7 +453,7 @@ var link_dialog = {
 
   //Same for resources tab
   page_tab: function(){
-    $('.link_list li').click(function(e){
+    $('.link_list li').has('a').click(function(e){
       e.preventDefault();
 
       $('.link_list li.linked').removeClass('linked');
