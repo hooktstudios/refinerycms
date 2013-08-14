@@ -1,22 +1,31 @@
+<form class="pure-form-stacked">
 <div class="clearfix dialog_link_to">
   <div id="dialog_menu_left">
-    <span id="your_page_radio" class="radio<%= ' selected_radio' if @page_area_selected %>">
-      <input type="radio" name="link_to" value="your_page" id="link_to_your_page" <%= 'checked="true"'.html_safe if @page_area_selected %> />
-      <label for="link_to_your_page" class="stripped"><%= t('.your_page.tab_name') %></label>
-    </span>
-    <span id="web_address_radio" class="radio<%= ' selected_radio' if @web_address_area_selected %>">
-      <input type="radio" name="link_to" value="web_address" id="link_to_web_address" <%= 'checked="true"'.html_safe if @web_address_area_selected %> />
-      <label for="link_to_web_address" class="stripped"><%= t('tab_name', :scope => 'refinery.admin.pages_dialogs.link_to.web_address') %></label>
+    <span id="your_page_radio" class="pure-u-1-5">
+      <label for="link_to_your_page" class="pure-checkbox <%= ' selected_radio' if @page_area_selected %>">
+        <input type="radio" name="link_to" value="your_page" id="link_to_your_page" <%= 'checked="true"'.html_safe if @page_area_selected %> />
+        <%= t('.your_page.tab_name') %>
+      </label>
     </span>
 
-    <span id="email_address_radio" class="radio<%= ' selected_radio' if @email_address_area_selected %>">
-      <input type="radio" name="link_to" value="email_address" id="link_to_email_address" <%= 'checked="true"'.html_safe if @email_address_area_selected %> />
-      <label for="link_to_email_address" class="stripped"><%= t('tab_name', :scope => 'refinery.admin.pages_dialogs.link_to.email_address') %></label>
+    <span id="web_address_radio" class="pure-u-1-5">
+      <label for="link_to_web_address" class="pure-checkbox <%= ' selected_radio' if @web_address_area_selected %>">
+        <input type="radio" name="link_to" value="web_address" id="link_to_web_address" <%= 'checked="true"'.html_safe if @web_address_area_selected %> />
+        <%= t('tab_name', :scope => 'refinery.admin.pages_dialogs.link_to.web_address') %>
+      </label>
+    </span>
+
+    <span id="email_address_radio" class="pure-u-1-5">
+      <label for="link_to_email_address" class="pure-checkbox <%= ' selected_radio' if @email_address_area_selected %>">
+       <input type="radio" name="link_to" value="email_address" id="link_to_email_address" <%= 'checked="true"'.html_safe if @email_address_area_selected %> />
+        <%= t('tab_name', :scope => 'refinery.admin.pages_dialogs.link_to.email_address') %></label>
     </span>
     <% if ::Refinery::Plugins.registered.names.include?("refinery_files") and @resources.any? %>
-      <span id="resource_file_radio" class="radio<%= ' selected_radio' if @resource_area_selected %>">
-        <input type="radio" name="link_to" value="resource_file" id="link_to_resource_file" <%= 'checked="true"'.html_safe if @resource_area_selected %> />
-        <label for="link_to_resource_file" class="stripped"><%= t('tab_name', :scope => 'refinery.admin.pages_dialogs.link_to.your_resource') %></label>
+      <span id="resource_file_radio" class="pure-u-1-5">
+        <label for="link_to_resource_file" class="pure-checkbox <%= ' selected_radio' if @resource_area_selected %>">
+         <input type="radio" name="link_to" value="resource_file" id="link_to_resource_file" <%= 'checked="true"'.html_safe if @resource_area_selected %> />
+          <%= t('tab_name', :scope => 'refinery.admin.pages_dialogs.link_to.your_resource') %>
+        </label>
       </span>
     <% end %>
   </div>
@@ -41,9 +50,10 @@
       <div id="web_address_content">
         <label for="web_address_text"><%= t('location', :scope => 'refinery.admin.pages_dialogs.link_to.web_address') %></label>
         <%= text_field :web_address, :text, :value => @web_address_text, :style => "width: 70%" %>
-        <label><%= t('new_window', :scope => 'refinery.admin.pages_dialogs.link_to.web_address') %></label>
-        <input type="checkbox" name="web_address_target_blank" id="web_address_target_blank" <%= 'checked="checked"'.html_safe if @web_address_target_blank %> />
-        <label for="web_address_target_blank" class="stripped"><%= t('new_window_label', :scope => 'refinery.admin.pages_dialogs.link_to.web_address') %></label>
+        <label class="pure-checkbox">
+          <input type="checkbox" name="web_address_target_blank" id="web_address_target_blank" <%= 'checked="checked"'.html_safe if @web_address_target_blank %> />
+          <%= t('new_window', :scope => 'refinery.admin.pages_dialogs.link_to.web_address') %></label>
+        <p><%= t('new_window_label', :scope => 'refinery.admin.pages_dialogs.link_to.web_address') %></p>
         <p>
           <strong><%= t('not_sure', :scope => 'refinery.admin.pages_dialogs.link_to.web_address') %></strong>
         </p>
@@ -115,7 +125,7 @@
              :cancel_title => nil,
              :hide_delete => true %>
 </div>
-
+</form>
 <% content_for :javascripts do %>
   <script>
     $(document).ready(function(){
