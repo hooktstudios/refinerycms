@@ -509,6 +509,12 @@ form .field_with_hint {
 // for good measure, this is a temporary hack.
 #existing_image_size_area { display: none; }
 
+// Link selector
+
+.linked {
+  font-weight: bold;
+}
+
 //Utilities
 
 .clearfix:after {
