@@ -49,7 +49,7 @@
         var prev_url = form.attr('action');
         var prev_target = form.attr('target');
         form.attr({
-          'action': '<%= raw(@page.persisted? ? refinery.pages_admin_preview_page_path(@page.nested_url) : refinery.pages_admin_preview_pages_path) %>'
+          'action': '<%= @page.persisted? ? refinery.pages_admin_preview_page_path(@page.nested_url) : refinery.pages_admin_preview_pages_path %>'
           , 'target': '_blank'
         });
         form.submit();
