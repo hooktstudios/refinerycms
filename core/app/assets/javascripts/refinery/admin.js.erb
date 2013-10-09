@@ -780,8 +780,11 @@ function ImageDialog(options) {
     $('#existing_image_size_area #wants_to_resize_image').change(function(){
       if($(this).is(":checked")) {
         $('#existing_image_size_area ul li.default a').click();
-      } else {
+        $('#existing_image_size_area ul').removeClass('hidden');
+      }
+      else {
         $('#existing_image_size_area ul li').removeClass('selected');
+        $('#existing_image_size_area ul').addClass('hidden');
         self.toggle_image($('#existing_image_area_content ul li.selected img'));
       }
     });

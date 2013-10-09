@@ -30,7 +30,7 @@
           <%= t('.resize_image') %>
         </label>
       </p>
-      <ul>
+      <ul class="plain">
         <%
           Refinery::Images.user_image_sizes.sort_by { |key, geometry| geometry }.each_with_index do |(size, pixels), index|
             safe_pixels = pixels.to_s.gsub(/[<>=]/, '')
@@ -39,6 +39,7 @@
         -%>
             <li id="image_dialog_size_<%= index %>" class="image_dialog_size<%= ' selected default' if is_default %>">
               <%= link_to size_label, "##{size}",
+                          :class => 'pure-button',
                           :'data-geometry' => pixels,
                           :'data-size' => size.to_s.parameterize,
                           :title   => "#{size} image (#{safe_pixels})",

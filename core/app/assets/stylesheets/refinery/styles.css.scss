@@ -46,6 +46,11 @@ a {
 
 ul {
   padding-left: 20px;
+
+  &.plain {
+    @extend %inline;
+    padding-left: 0;
+  }
 }
 
 input {
@@ -492,6 +497,10 @@ input[type="submit"] {
   }
 }
 
+.image_dialog_size.selected a {
+  background: #A8D6FF;
+}
+
 .hint {
   color: #777;
   display: inline-block;
@@ -512,6 +521,10 @@ form .field_with_hint {
 }
 
 //Utilities
+
+.hidden {
+  display: none;
+}
 
 .clearfix:after {
   content:".";
