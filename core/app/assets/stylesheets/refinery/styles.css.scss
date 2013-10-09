@@ -505,10 +505,6 @@ form .field_with_hint {
   input { display: inline-block; }
 }
 
-// No need for a resizing image tool for now. Again, I'll leave this @todo here
-// for good measure, this is a temporary hack.
-#existing_image_size_area { display: none; }
-
 // Link selector
 
 .linked {
