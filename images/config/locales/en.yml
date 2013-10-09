@@ -6,6 +6,10 @@ en:
         description: Manage images
     admin:
       images:
+        formats:
+          small: Small
+          medium: Medium
+          large: Large
         delete: Remove this image forever
         edit: Edit this image
         form:

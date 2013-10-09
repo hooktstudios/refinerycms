@@ -779,7 +779,7 @@ function ImageDialog(options) {
 
     $('#existing_image_size_area #wants_to_resize_image').change(function(){
       if($(this).is(":checked")) {
-        $('#existing_image_size_area ul li:first a').click();
+        $('#existing_image_size_area ul li.default a').click();
       } else {
         $('#existing_image_size_area ul li').removeClass('selected');
         self.toggle_image($('#existing_image_area_content ul li.selected img'));
