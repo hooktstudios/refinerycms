@@ -129,6 +129,14 @@ h1:first-child {
   border-color: #bce8f1;
 }
 
+.flash_error {
+  background: #f7e5e5;
+  border-color: #e4c6c6;
+  color: #a33f3f;
+
+  a { color: #a33f3f; }
+}
+
 #flash_close {
   float: right;
   font-size: 0;
