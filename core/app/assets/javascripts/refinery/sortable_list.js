@@ -11,7 +11,7 @@ var create_sortable_list = function(options){
                 //setup dom
                 this.div_with_list_and_actions = this.sortable_list.parents().filter(function(index) {
                     return ($(this).children("#actions").length > 0);
-                });
+                }).first();
                 this.actions = $("#actions",this.div_with_list_and_actions);
                 this.reorder_action = $('#reorder_action',this.actions);
                 this.reorder_action_done = $('#reorder_action_done',this.actions);
