@@ -48,6 +48,10 @@
         var form = $(this).parents('form');
         var prev_url = form.attr('action');
         var prev_target = form.attr('target');
+
+        // Force prev target attr if undefined
+        if (!prev_target) prev_target = "";
+
         form.attr({
           'action': '<%= @page.persisted? ? refinery.pages_admin_preview_page_path(@page.nested_url) : refinery.pages_admin_preview_pages_path %>'
           , 'target': '_blank'
