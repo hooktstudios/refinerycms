@@ -1,4 +1,5 @@
 <%
+  field_id = [f.object_name.gsub(/\]\[|[^-a-zA-Z0-9:.]/, '_').sub(/_$/, ''), field].join('_')
   insert_text = %Q{<span id="no_resource_selected_#{field}" class="nothing_selected" #{'style="display: none;"'.html_safe if resource}>
                    #{t('.no_resource_selected')}
                  </span>}.html_safe
@@ -7,7 +8,7 @@
                   :update_resource => "current_resource_#{field}",
                   :update_text => "current_resource_text_#{field}",
                   :callback => "resource_changed_#{field}",
-                  :field => [f.object_name.gsub(/\]\[|[^-a-zA-Z0-9:.]/, '_').sub(/_$/, ''), field].join('_'),
+                  :field => field_id,
                   :current_link => "#{resource.url if resource}",
                   :height => 480,
                   :conditions => local_assigns[:conditions]
@@ -52,7 +53,7 @@
 
     $(document).ready(function(e) {
       $('#remove_resource_<%= field %>').click(function(e) {
-        $('#<%= f.object_name %>_<%= field %>').val('');
+        $('#<%= field_id %>').val('');
         $('#current_resource_container_<%= field %>').hide();
         $('#current_resource_text_<%= field %>').html('');
         $('#no_resource_selected_<%= field %>').show();
