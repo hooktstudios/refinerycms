@@ -190,7 +190,7 @@ module Refinery
     # Returns in cascading order: custom_slug or menu_title or title depending on
     # which attribute is first found to be present for this page.
     def custom_slug_or_title
-      custom_slug.presence || menu_title.presence || title.presence
+      custom_slug.presence || menu_title.presence || title
     end
 
     # Am I allowed to delete this page?
